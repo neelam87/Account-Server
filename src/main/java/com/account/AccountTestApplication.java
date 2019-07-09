@@ -17,7 +17,7 @@ import com.account.util.LoggingInterceptor;
 
 @SpringBootApplication
 @Import({SwaggerConfig.class})
-@EnableEurekaClient
+//@EnableEurekaClient
 public class AccountTestApplication extends WebMvcConfigurerAdapter
 {
 
@@ -26,12 +26,12 @@ public class AccountTestApplication extends WebMvcConfigurerAdapter
         SpringApplication.run(AccountTestApplication.class, args);
     }
 
-
-    @Override
-    public void addInterceptors(InterceptorRegistry registry)
-    {
-        registry.addInterceptor(new LoggingInterceptor()).addPathPatterns("/**");
-    }
+//
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry)
+//    {
+//        registry.addInterceptor(new LoggingInterceptor()).addPathPatterns("/v1/**");
+//    }
     
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
@@ -39,7 +39,4 @@ public class AccountTestApplication extends WebMvcConfigurerAdapter
         return builder.build();
 
     }
-
-
-   
 }

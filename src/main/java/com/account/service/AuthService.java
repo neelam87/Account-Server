@@ -30,7 +30,7 @@ public class AuthService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Value("http://localhost:8062/oauth/token")
+    @Value("${urls.token-url}")
     private String get_token;
 
     public ResponseEntity<AuthToken> getToken(AuthRequest authRequest) throws Exception {
@@ -38,10 +38,10 @@ public class AuthService {
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
         logger.info("Fetching Token");
         MultiValueMap<String, String> map= new LinkedMultiValueMap<String, String>();
-        map.add("client_id", authRequest.getClientId()); // "X-ONE"
-        map.add("username", authRequest.getUsername()); // "z12345"
-        map.add("password", authRequest.getPassword()); // "READ WRITE"
-        map.add("grant_type", authRequest.getGrantType()); // "client_credentials"
+        map.add("client_id", authRequest.getClientId()); 
+        map.add("username", authRequest.getUsername()); 
+        map.add("password", authRequest.getPassword()); 
+        map.add("grant_type", authRequest.getGrantType()); 
 
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
 

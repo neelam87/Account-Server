@@ -12,6 +12,10 @@ eureka:
       enabled: true
     lease:
       duration: 5
+      
+urls:
+  auth-url: http://localhost:8062/validate/token
+  token-url: http://localhost:8062/oauth/token     
 
 spring:
   application:
@@ -23,4 +27,5 @@ management:
 
 logging:
   level:
-    com.account: DEBUG          
+    com.account: DEBUG
+    
