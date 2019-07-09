@@ -27,7 +27,12 @@
 
 
 	<dependencies>
-		<dependency>
+	<dependency>
+	  <groupId>org.projectlombok</groupId>
+	    <artifactId>lombok</artifactId>
+	    <scope>compile</scope>
+	 </dependency>
+	 <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
@@ -45,6 +50,16 @@
 			<artifactId>spring-security-crypto</artifactId>
 			<version>5.1.5.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>20.0</version>
+            </dependency>
 		<!-- DB-JPA boot related -->
 		<dependency>
 			<groupId>com.h2database</groupId>
